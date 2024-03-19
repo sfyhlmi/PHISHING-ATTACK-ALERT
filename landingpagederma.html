@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borang Derma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ffd700 50%, #f0f0f0 50%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background-color: #f5f5f5; /* Light grey background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #333333; /* Dark grey text color */
+            text-transform: uppercase;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-top: 20px;
+            color: #333333; /* Dark grey text color */
+            text-align: left;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid #da9100; /* Gold border */
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #333333; /* Dark grey text color */
+            background-color: #f0f0f0; /* Light grey background */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 40px;
+            background-color: #da9100; /* Gold background */
+            color: #333333; /* Dark grey text color */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #ffdf00; /* Lighter yellow on hover */
+        }
+
+        /* Terms and conditions section */
+        .terms {
+            margin-top: 20px;
+            text-align: left;
+            color: #333333; /* Dark grey text color */
+            font-size: 14px;
+        }
+
+        .terms a {
+            color: #333333; /* Dark grey text color */
+            text-decoration: underline;
+        }
+
+        .tick {
+            display: inline-block;
+            margin-top: 20px;
+            text-align: left;
+            color: #333333; /* Dark grey text color */
+        }
+
+        .tick input[type="checkbox"] {
+            display: none;
+        }
+
+        .tick label {
+            cursor: pointer;
+        }
+
+        .tick label:before {
+            content: "\2714"; /* Checkmark character */
+            display: inline-block;
+            font-size: 18px;
+            color: transparent;
+            transition: all 0.3s;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .tick input[type="checkbox"]:checked+label:before {
+            color: #da9100; /* Gold color */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Donation Form -->
+        <h1>MAKLUMAT PENDERMA</h1>
+        <!-- Personal Information Fields -->
+        <label for="fullname">NAMA PENUH:</label>
+        <input id="fullname" name="fullname" placeholder="Masukkan nama penuh anda" type="text" />
+        <label for="email">EMEL:</label>
+        <input id="email" name="email" placeholder="Masukkan alamat emel anda" type="text" />
+        <label for="phone">NO. TEL:</label>
+        <input id="phone" name="phone" placeholder="Masukkan nombor telefon anda" type="text" />
+
+
+        <!-- Donation Button -->
+        <a class="button" href="#" onclick="submitForm()">KLIK UNTUK MENDERMA</a>
+    </div>
+
+</body>
+
+</html>

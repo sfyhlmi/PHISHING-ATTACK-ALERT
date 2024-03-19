@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <link rel="stylesheet" href="token_sent.css"> <!-- Assuming 'token_sent.css' contains the styles for the alert message -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #f39c12; /* Futuristic yellow color */
+        }
+
+        #countdown {
+            font-size: 3em;
+            color: #25ccf7; /* Blue color */
+            margin: 20px 0;
+        }
+
+        #logout-message {
+            display: none;
+            color: #e84118; /* Red color */
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="countdown">01:00</div>
+    <div id="logout-message">Your time has reached the limit. You are logged out.</div>
+
+    <script>
+        var countdownTime = 60;
+        var countdownInterval;
+
+        function updateCountdown() {
+            var minutes = Math.floor(countdownTime / 60);
+            var seconds = countdownTime % 60;
+
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            document.getElementById('countdown').textContent = minutes + ':' + seconds;
+
+            if (countdownTime <= 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('logout-message').style.display = 'block';
+                setTimeout(function () {
+                    // Redirect to the kids login page after displaying the message
+                    window.location.href = 'kids_login.html';
+                }, 3000);
+            }
+
+            countdownTime--;
+        }
+
+        countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>

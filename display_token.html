@@ -1,0 +1,21 @@
+<?php
+session_start();
+if (isset($_POST['okay_button'])) {
+    // Redirect to the kids login page
+    header('Location: kids_login.html');
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<form action="generate_token.php" method="post">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">	
+<h4>Here is your token to log in: </h4>
+<div class="alert" id="alertMessage">Please copy the token</div>
+<div> <button type="submit" name="okay_button">Okay</button></div>
+</form>
+</head>
+</html>

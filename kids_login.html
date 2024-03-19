@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Guest Login Page</title>
+
+    <style>
+        /* Use custom fonts and colors */
+        @import url('https://fonts.googleapis.com/css?family=Segoe+UI:400,500,700&display=swap');
+
+        :root {
+            --primary-color: #0000ff; /* Neon Blue */
+            --secondary-color: #ffffff;
+            --accent-color: #0000ff; /* Neon Blue */
+            --background-color: #0f2027;
+            --text-color: #555555;
+            --shadow-color: rgba(52, 152, 219, 0.7); /* Neon Blue shadow */
+            --alert-color: #e84118; /* Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, var(--background-color), #203a43, #2c5364);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;   
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--primary-color);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .alert {
+            color: var(--alert-color);
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="kids_dashboard.html" method="post">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="stealthx.png" width="150" height="150" alt="Logo">
+            </div>
+			
+        </div>
+
+        <h2>Guest Login</h2>
+
+        <label for="token">Token:</label>
+        <input type="text" id="tokenInput" name="token" required>
+
+        <button type="submit">Login</button>
+
+        <p class="alert">Insert the token provided by the admin to login</p>
+    </form>
+
+    <script>
+        // JavaScript to toggle password visibility
+        const passwordInput = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('showPassword');
+
+        showPasswordCheckbox.addEventListener('change', function () {
+            passwordInput.type = this.checked ? 'text' : 'password';
+        });
+    </script>
+</body>
+
+</html>
